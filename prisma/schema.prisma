@@ -1,8 +1,94 @@
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
+}
+
+// Define table models
+model buku {
+  buku_id             Int                 @id @default(autoincrement())
+  judul_buku          String
+  category_id         Int
+  tahun_terbit        Int
+  deskripsi           String
+  jumlah_halaman      Int
+  waktu_peminjaman    Int
+  cover_buku          String
+  category            category?           @relation(fields: [category_id], references: [category_id])
+  detail_peminjaman   detail_peminjaman[]
+  detail_penulis_buku detail_penulis_buku[]
+}
+
+model category {
+  category_id   Int    @id
+  nama_kategori String
+  buku          buku[]
+}
+
+model detail_peminjaman {
+  detail_peminjaman_id Int        @id @default(autoincrement())
+  status               String
+  buku_id              Int
+  peminjaman_id        Int
+  member_id            Int
+  staff_id             Int
+  buku                 buku       @relation(fields: [buku_id], references: [buku_id])
+  member               member     @relation(fields: [member_id], references: [member_id])
+  peminjaman           peminjaman @relation(fields: [peminjaman_id], references: [peminjaman_id])
+  staff                staff      @relation(fields: [staff_id], references: [staff_id])
+}
+
+model detail_penulis_buku {
+  buku_id      Int
+  penulis_id   Int
+  keterangan   String?
+  buku         buku         @relation(fields: [buku_id], references: [buku_id])
+  penulis_buku penulis_buku @relation(fields: [penulis_id], references: [penulis_id])
+  @@id([buku_id, penulis_id])
+}
+
+model member {
+  member_id         Int                @id @default(autoincrement())
+  m_nama_awal       String
+  m_nama_akhir      String
+  m_no_telp         String
+  m_tanggal_lahir   DateTime
+  m_tanggal_daftar  DateTime           @default(now())
+  m_alamat          String
+  m_kota            String
+  m_email           String             @unique
+  m_password        String             @db.VarChar(100)
+  detail_peminjaman detail_peminjaman[]
+}
+
+model peminjaman {
+  peminjaman_id        Int                @id @default(autoincrement())
+  tanggal_peminjaman   DateTime           @default(now())
+  tanggal_pengembalian DateTime
+  detail_peminjaman    detail_peminjaman[]
+}
+
+model penulis_buku {
+  penulis_id          Int                 @id
+  nama_awal           String
+  nama_akhir          String
+  detail_penulis_buku detail_penulis_buku[]
+}
+
+model staff {
+  staff_id          Int                @id @default(autoincrement())
+  nama_awal         String
+  nama_akhir        String
+  jabatan           String             @default("Admin")
+  no_telp           String
+  tanggal_lahir     DateTime
+  tanggal_masuk     DateTime           @default(now())
+  alamat            String
+  kota              String
+  email             String             @unique
+  password          String             @db.VarChar(100)
+  detail_peminjaman detail_peminjaman[]
 }

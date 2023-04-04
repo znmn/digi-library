@@ -131,3 +131,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+
+# Others
+*tes.*
