@@ -6,10 +6,10 @@ export default async function handle(req, res) {
 	try {
 		switch (req.method) {
 			case "POST":
-				let { nama_awal, nama_akhir, no_telp, tanggal_lahir, alamat, kota, email, password } = req.body;
+				let { nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, password } = req.body;
 
-				if (!nama_awal || !nama_akhir || !no_telp || !tanggal_lahir || !alamat || !kota || !email || !password) {
-					return res.status(400).json({ success, message: "nama_awal, nama_akhir, no_telp, tanggal_lahir, alamat, kota, email, and password field are required" });
+				if (!nama_lengkap || !no_telp || !tanggal_lahir || !alamat || !kota || !email || !password) {
+					return res.status(400).json({ success, message: "nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, and password field are required" });
 				}
 
 				const isExist = await prisma.staff.findUnique({ where: { email } });
@@ -20,8 +20,7 @@ export default async function handle(req, res) {
 				const hashedPassword = await bcrypt.hash(password, 10);
 				const admin = await prisma.staff.create({
 					data: {
-						nama_awal,
-						nama_akhir,
+						nama_lengkap,
 						no_telp,
 						tanggal_lahir: new Date(tanggal_lahir),
 						alamat,

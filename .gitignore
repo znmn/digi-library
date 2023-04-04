@@ -135,3 +135,4 @@ yarn-error.log*
 
 # Others
 *tes.*
+*.bak

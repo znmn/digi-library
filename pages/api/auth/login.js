@@ -20,7 +20,6 @@ export default async function handle(req, res) {
 					return res.status(400).json({ success, message: "Admin with this email does not exist" });
 				}
 
-				console.log(await bcrypt.hash(admin.password, 10), admin.password);
 				const isPasswordValid = await bcrypt.compare(password, admin.password);
 				if (!isPasswordValid) {
 					return res.status(400).json({ success, message: "Invalid password" });
