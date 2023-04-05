@@ -65,4 +65,13 @@ model staff {
   email             String             @unique
   password          String             @db.VarChar(100)
   detail_peminjaman detail_peminjaman[]
+  kode_daftar       kode_daftar[]
+}
+
+model kode_daftar {
+  kode_daftar_id Int  @id      @default(autoincrement())
+  kode_daftar         String   @unique
+  staff_id            Int
+  pembuat             staff    @relation(fields: [staff_id], references: [staff_id])
+  is_used             Boolean  @default(false)
 }
