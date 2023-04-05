@@ -11,13 +11,14 @@ export default authMiddleware(async function handle(req, res) {
 			const buku = await prisma.buku.findUnique({ where: { buku_id: parseInt(buku_id) } });
 			return buku ? res.status(200).json(buku) : res.status(404).json({ success, message: "Buku tidak ditemukan" });
 		} else if (req.method === "PATCH") {
-			const { judul_buku, deskripsi, tahun_terbit, jumlah_halaman, waktu_peminjaman, cover_buku } = req.body;
+			const { judul_buku, nama_penulis, deskripsi, tahun_terbit, jumlah_halaman, waktu_peminjaman, cover_buku } = req.body;
 			const buku = await prisma.buku.update({
 				where: {
 					buku_id: parseInt(buku_id),
 				},
 				data: {
 					judul_buku,
+					nama_penulis,
 					deskripsi,
 					tahun_terbit: parseInt(tahun_terbit),
 					jumlah_halaman: parseInt(jumlah_halaman),

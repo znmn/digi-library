@@ -11,13 +11,13 @@ generator client {
 model buku {
   buku_id             Int                 @id @default(autoincrement())
   judul_buku          String              @unique @db.VarChar(100)
+  nama_penulis        String              @db.VarChar(50)
   tahun_terbit        Int
   deskripsi           String              @default("-") @db.VarChar(500)
   jumlah_halaman      Int
   waktu_peminjaman    Int                 @default(7)
-  cover_buku          String
+  cover_buku          String              @db.VarChar(150)
   detail_peminjaman   detail_peminjaman[]
-  detail_penulis_buku detail_penulis_buku[]
 }
 
 model detail_peminjaman {
@@ -31,27 +31,12 @@ model detail_peminjaman {
   staff                staff      @relation(fields: [staff_id], references: [staff_id])
 }
 
-model detail_penulis_buku {
-  buku_id      Int
-  penulis_id   Int
-  keterangan   String?      @default("-") @db.VarChar(100)
-  buku         buku         @relation(fields: [buku_id], references: [buku_id])
-  penulis_buku penulis_buku @relation(fields: [penulis_id], references: [penulis_id])
-  @@id([buku_id, penulis_id])
-}
-
 model peminjaman {
   peminjaman_id        Int                @id @default(autoincrement())
   nim_peminjam         BigInt
   tanggal_peminjaman   DateTime           @default(now())
   tanggal_pengembalian DateTime
   detail_peminjaman    detail_peminjaman[]
-}
-
-model penulis_buku {
-  penulis_id          Int                 @id
-  nama_lengkap        String              @db.VarChar(50)
-  detail_penulis_buku detail_penulis_buku[]
 }
 
 model staff {

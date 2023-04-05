@@ -103,7 +103,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -173,7 +173,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

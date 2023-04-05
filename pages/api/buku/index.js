@@ -5,12 +5,12 @@ export default authMiddleware(async function handle(req, res) {
 	let success = false;
 	try {
 		if (req.method == "GET") {
-			const buku = await prisma.buku.findMany({ orderBy: { buku_id: "asc" } });
+			const buku = await prisma.buku.findMany({ orderBy: { judul_buku: "asc" } });
 			return res.status(200).json(buku);
 		} else if (req.method == "POST") {
-			const { judul_buku, deskripsi, tahun_terbit, jumlah_halaman, waktu_peminjaman, cover_buku } = req.body;
-			if (!judul_buku || !tahun_terbit || !jumlah_halaman || !cover_buku) {
-				return res.status(400).json({ success, message: "judul_buku, tahun_terbit, jumlah_halaman, and cover_buku field are required" });
+			const { judul_buku, nama_penulis, deskripsi, tahun_terbit, jumlah_halaman, waktu_peminjaman, cover_buku } = req.body;
+			if (!judul_buku || !tahun_terbit || !nama_penulis || !jumlah_halaman || !cover_buku) {
+				return res.status(400).json({ success, message: "judul_buku, nama_penulis, tahun_terbit, jumlah_halaman, and cover_buku field are required" });
 			}
 
 			const isExist = await prisma.buku.findUnique({ where: { judul_buku } });
@@ -21,6 +21,7 @@ export default authMiddleware(async function handle(req, res) {
 			const buku = await prisma.buku.create({
 				data: {
 					judul_buku,
+					nama_penulis,
 					deskripsi,
 					tahun_terbit: parseInt(tahun_terbit),
 					jumlah_halaman: parseInt(jumlah_halaman),
