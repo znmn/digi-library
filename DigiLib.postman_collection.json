@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "b0749f8c-de68-40d4-b9a6-0205e2d6c6e4",
+		"name": "DigiLib",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nama_lengkap\": \"Jaka Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jember\",\r\n\t\"email\": \"jakafas@gmail.com\",\r\n\t\"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jakafas@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Data Buku",
+			"item": [
+				{
+					"name": "Tambah Data Buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buku",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Baca Seluruh Data Buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buku",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Baca 1 Data Buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buku/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update 1 Data Buku Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/buku/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus 1 Data Buku",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buku/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODA2NzIwMjEsImV4cCI6MTY4MDc1ODQyMX0.C254sNby9p9ZSFXKO8QoYatUZ0Q5x5vsZPWejUcoFck",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

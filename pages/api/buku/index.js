@@ -5,7 +5,7 @@ export default authMiddleware(async function handle(req, res) {
 	let success = false;
 	try {
 		if (req.method == "GET") {
-			const buku = await prisma.buku.findMany();
+			const buku = await prisma.buku.findMany({ orderBy: { buku_id: "asc" } });
 			return res.status(200).json(buku);
 		} else if (req.method == "POST") {
 			const { judul_buku, deskripsi, tahun_terbit, jumlah_halaman, waktu_peminjaman, cover_buku } = req.body;

@@ -45,7 +45,8 @@ export default authMiddleware(async function handle(req, res) {
 	} catch (err) {
 		console.error(err);
 		if (err instanceof Prisma.PrismaClientKnownRequestError) {
-			return res.status(400).json({ success, message: err.meta.cause });
+			const message = err.meta.cause || err.message.split("invocation:\n\n\n")[1];
+			return res.status(400).json({ success, message });
 		}
 		return res.status(500).json({ success, message: "Internal server error" });
 	}
