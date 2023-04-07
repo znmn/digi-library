@@ -5,6 +5,8 @@ const JWT_SECRET = process.env.JWT_SECRET,
 
 export default function authMiddleware(handler) {
 	return async (req, res) => {
+		if (req.method == "GET") return handler(req, res);
+
 		const token = req.headers.authorization?.replace("Bearer ", "");
 		if (!token) {
 			return res.status(401).json({ message: "Unauthorized" });

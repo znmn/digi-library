@@ -10,7 +10,7 @@ generator client {
 // Define table models
 model buku {
   buku_id             Int                 @id @default(autoincrement())
-  judul_buku          String              @unique @db.VarChar(100)
+  judul_buku          String              @db.VarChar(100)
   nama_penulis        String              @db.VarChar(50)
   tahun_terbit        Int
   deskripsi           String              @default("-") @db.VarChar(500)

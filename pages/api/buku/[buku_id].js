@@ -1,13 +1,15 @@
 import bcrypt from "bcrypt";
-import prisma from "@/lib/_prisma";
+import prisma from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
-import authMiddleware from "@/lib/_middleware";
+import authMiddleware from "@/middlewares/middleware";
 
 export default authMiddleware(async function handle(req, res) {
 	const { buku_id } = req.query;
 	let success = false;
 	try {
 		if (req.method === "GET") {
+			if (isNaN(buku_id)) return res.status(400).json({ success, message: "Invalid buku_id" });
+
 			const buku = await prisma.buku.findUnique({ where: { buku_id: parseInt(buku_id) } });
 			return buku ? res.status(200).json(buku) : res.status(404).json({ success, message: "Buku tidak ditemukan" });
 		} else if (req.method === "PATCH") {
