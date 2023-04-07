@@ -5,7 +5,7 @@ export default function Sidebar({}) {
 				<div className="sidebar-header position-relative">
 					<div className="d-flex justify-content-between align-items-center">
 						<div className="logo">
-							<a href="/buku">My DigiLibrary</a>
+							<a href="/buku">E-Library</a>
 						</div>
 					</div>
 				</div>

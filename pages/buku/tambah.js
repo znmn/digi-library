@@ -52,11 +52,9 @@ export default function Buku() {
 		<>
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<title>Tambah Data Buku | My DigiLibrary</title>
+			<title>Tambah Data Buku | E-Library</title>
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app.css" />
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app-dark.css" />
-			<link rel="shortcut icon" href="/mazer/dist/assets/images/logo/favicon.svg" type="image/x-icon" />
-			<link rel="shortcut icon" href="/mazer/dist/assets/images/logo/favicon.png" type="image/png" />
 			<style
 				dangerouslySetInnerHTML={{
 					__html:

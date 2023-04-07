@@ -58,8 +58,7 @@ export default function Register() {
 			<meta name="description" content="" />
 			<meta name="author" content="" />
 			{/* Favicon icon */}
-			<link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo(2).png" />
-			<title>My DigiLibrary | Sistem Informasi Peminjaman Buku</title>
+			<title>E-Library | Sistem Informasi Peminjaman Buku</title>
 			{/* Bootstrap Core CSS */}
 			<link href="/template/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 			{/* chartist CSS */}
@@ -78,8 +77,8 @@ export default function Register() {
 				<div className="row justify-content-center">
 					<div className="col-xl-5 col-lg-6 col-md-8">
 						<center>
-							<img src="/assets/img/logo(2).png" style={{ maxWidth: 100, marginTop: "10%" }} />
-							<h1 className="mt-5">My DigiLibrary</h1>
+							<img src="/assets/img/logo(2).png" style={{ maxWidth: 125, marginTop: "10%" }} />
+							<h1 className="mt-4">E-Library</h1>
 						</center>
 						<div className="card o-hidden border-3 shadow-lg" style={{ marginTop: "10%", marginBottom: "25%" }}>
 							<div className="card-body col-md-12 mx-auto">
