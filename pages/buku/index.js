@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import React from "react";
 import { authPage } from "@/middlewares/middlewarePage";
+import Sidebar from "@/components/Sidebar";
+import Pagination from "@/components/Pagination";
 
 export async function getServerSideProps(ctx) {
 	const { token } = await authPage(ctx);
@@ -42,61 +43,6 @@ export default function Buku({ books }) {
 		}
 	};
 
-	const renderPagination = () => {
-		const startNum = pages.current > 1 ? pages.current - 1 : 1,
-			endNum = pages.current < pages.total - 1 ? pages.current + 1 : pages.total;
-		let pg = [];
-
-		const isFirst = pages.current == 1,
-			isLast = pages.current == pages.total;
-
-		pg.push(
-			<React.Fragment key={"first"}>
-				<li className={`page-item ${isFirst ? "disabled" : "halaman"}`} id="1" key={"first"}>
-					<a className="page-link" href="?page=1">
-						First
-					</a>
-				</li>
-				<li className={`page-item ${isFirst ? "disabled" : "halaman"}`} id={pages.current - 1} key={pages.current - 1}>
-					<a className="page-link" href={`?page=${pages.current - 1}`}>
-						<span aria-hidden="true">&laquo;</span>
-					</a>
-				</li>
-			</React.Fragment>
-		);
-
-		for (let i = startNum; i <= endNum; i++) {
-			const link_active = pages.current == i ? " active" : "";
-
-			pg.push(
-				<React.Fragment key={i}>
-					<li className={`page-item halaman ${link_active}`} id={i}>
-						<a className="page-link" href={`?page=${i}`}>
-							{i}
-						</a>
-					</li>
-				</React.Fragment>
-			);
-		}
-
-		const link_next = pages.current < pages.total ? pages.current + 1 : pages.total;
-		pg.push(
-			<React.Fragment key={"last"}>
-				<li className={`page-item ${isLast ? "disabled" : "halaman"}`} id={link_next}>
-					<a className="page-link" href={`?page=${link_next}`}>
-						<span aria-hidden="true">&raquo;</span>
-					</a>
-				</li>
-				<li className={`page-item ${isLast ? "disabled" : "halaman"}`} id={pages.total}>
-					<a className="page-link" href={`?page=${pages.total}`}>
-						Last
-					</a>
-				</li>
-			</React.Fragment>
-		);
-		return pg;
-	};
-
 	return (
 		<>
 			<meta charSet="UTF-8" />
@@ -107,54 +53,7 @@ export default function Buku({ books }) {
 			<link rel="shortcut icon" href="/mazer/dist/assets/images/logo/favicon.svg" type="image/x-icon" />
 			<link rel="shortcut icon" href="/mazer/dist/assets/images/logo/favicon.png" type="image/png" />
 			<div id="app">
-				<div id="sidebar" className="active">
-					<div className="sidebar-wrapper active">
-						<div className="sidebar-header position-relative">
-							<div className="d-flex justify-content-between align-items-center">
-								<div className="logo">
-									<a href="dashboard.php">My DigiLibrary</a>
-								</div>
-							</div>
-						</div>
-						<div className="sidebar-menu">
-							<ul className="menu">
-								<li className="sidebar-title">Menu</li>
-								<li className="sidebar-item  ">
-									<a href="index_admin.php" className="sidebar-link">
-										<i className="bi bi-grid-fill" />
-										<span>Dashboard</span>
-									</a>
-								</li>
-								<li className="sidebar-item  ">
-									<a href="form_peminjaman.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Buat Peminjaman Buku</span>
-									</a>
-								</li>
-								<li className="sidebar-item  ">
-									<a href="data_peminjam_admin.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Lihat Peminjaman Buku</span>
-									</a>
-								</li>
-								<li className="sidebar-item">
-									<a href="form_buku_baru.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Tambah Buku Baru</span>
-									</a>
-								</li>
-								<li className="sidebar-item">
-									<form action="/logout" method="POST">
-										<button type="submit" className="sidebar-link">
-											<i className="bi bi-box-arrow-right" />
-											<span>Logout</span>
-										</button>
-									</form>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<Sidebar />
 				<div id="main">
 					<header className="mb-3">
 						<a href="#" className="burger-btn d-block d-xl-none">
@@ -217,7 +116,9 @@ export default function Buku({ books }) {
 						</div>
 						<br />
 						<nav className="mb-5">
-							<ul className="pagination justify-content-center">{renderPagination()}</ul>
+							<ul className="pagination justify-content-center">
+								<Pagination pages={pages} />
+							</ul>
 						</nav>
 					</div>
 				</div>

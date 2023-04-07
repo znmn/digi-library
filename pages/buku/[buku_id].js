@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { authPage } from "@/middlewares/middlewarePage";
+import Sidebar from "@/components/Sidebar";
 
 export async function getServerSideProps(ctx) {
 	const { token } = await authPage(ctx);
@@ -91,54 +92,7 @@ export default function Buku() {
 				}}
 			/>
 			<div id="app">
-				<div id="sidebar" className="active">
-					<div className="sidebar-wrapper active">
-						<div className="sidebar-header position-relative">
-							<div className="d-flex justify-content-between align-items-center">
-								<div className="logo">
-									<a href="dashboard.php">My DigiLibrary</a>
-								</div>
-							</div>
-						</div>
-						<div className="sidebar-menu">
-							<ul className="menu">
-								<li className="sidebar-title">Menu</li>
-								<li className="sidebar-item  ">
-									<a href="index_admin.php" className="sidebar-link">
-										<i className="bi bi-grid-fill" />
-										<span>Dashboard</span>
-									</a>
-								</li>
-								<li className="sidebar-item  ">
-									<a href="form_peminjaman.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Buat Peminjaman Buku</span>
-									</a>
-								</li>
-								<li className="sidebar-item  ">
-									<a href="data_peminjam.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Lihat Peminjaman Buku</span>
-									</a>
-								</li>
-								<li className="sidebar-item  ">
-									<a href="form_buku_baru.php" className="sidebar-link">
-										<i className="bi bi-grid-1x2-fill" />
-										<span>Tambah Buku Baru</span>
-									</a>
-								</li>
-								<li className="sidebar-item">
-									<form method="post">
-										<button href="" type="submit" name="logout" className="sidebar-link">
-											<i className="bi bi-box-arrow-right" />
-											<span>Logout</span>
-										</button>
-									</form>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<Sidebar />
 				<div id="main">
 					<header className="mb-3">
 						<a href="#" className="burger-btn d-block d-xl-none">
