@@ -9,6 +9,7 @@ export async function getServerSideProps(ctx) {
 }
 
 export default function login() {
+	const cookieExpire = process.env.COOKIE_EXPIRE;
 	const router = useRouter();
 	const [dataLogin, setDataLogin] = useState({
 		email: "",
@@ -38,7 +39,7 @@ export default function login() {
 
 			if (res?.success) {
 				localStorage.setItem("token", res?.token);
-				Cookies.set("token", res?.token, { expires: process.env.COOKIE_EXPIRE });
+				Cookies.set("token", res?.token, { expires: cookieExpire });
 				router.push("/buku");
 			} else alert(res?.message || "Error: Unknown");
 		} catch (e) {
