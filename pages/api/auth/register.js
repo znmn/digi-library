@@ -2,19 +2,24 @@ import bcrypt from "bcrypt";
 import prisma from "@/lib/prisma";
 
 export default async function handle(req, res) {
+	const secret = process.env.SECRET_CODE || "AdminOnly";
 	let success = false;
 	try {
 		switch (req.method) {
 			case "POST":
-				let { nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, password } = req.body;
+				let { nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, password, kode_daftar } = req.body;
 
-				if (!nama_lengkap || !no_telp || !tanggal_lahir || !alamat || !kota || !email || !password) {
-					return res.status(400).json({ success, message: "nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, and password field are required" });
+				if (!nama_lengkap || !no_telp || !tanggal_lahir || !alamat || !kota || !email || !password || !kode_daftar) {
+					return res.status(400).json({ success, message: "nama_lengkap, no_telp, tanggal_lahir, alamat, kota, email, password, and kode_daftar field are required" });
 				}
 
 				const isExist = await prisma.staff.findUnique({ where: { email } });
 				if (isExist) {
 					return res.status(400).json({ success, message: "Admin with this email already exist" });
+				}
+
+				if (!(kode_daftar == secret)) {
+					return res.status(400).json({ success, message: "Invalid register code" });
 				}
 
 				const hashedPassword = await bcrypt.hash(password, 10);

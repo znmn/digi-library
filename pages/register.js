@@ -12,6 +12,7 @@ export default function Register() {
 	const [dataUser, setDataUser] = useState({
 		email: "",
 		password: "",
+		kode_daftar: "",
 		nama_lengkap: "",
 		no_telp: "",
 		tanggal_lahir: "",
@@ -100,6 +101,12 @@ export default function Register() {
 													Password:
 												</label>
 												<input type="password" id="password" name="password" placeholder="Masukkan password anda" className="form form-lg form-control mt-2" required onChange={handleChange} />
+											</div>
+											<div className="mt-3 mb-3 form-group">
+												<label htmlFor="kode_daftar" style={{ marginLeft: "2%" }}>
+													kode Daftar:
+												</label>
+												<input type="kode_daftar" id="kode_daftar" name="kode_daftar" placeholder="Masukkan kode daftar" className="form form-lg form-control mt-2" required onChange={handleChange} />
 											</div>
 											<div className="mt-3 form-group">
 												<label htmlFor="nama_lengkap" style={{ marginLeft: "2%" }}>
