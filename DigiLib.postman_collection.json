@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nama_lengkap\": \"Jaka Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jember\",\r\n\t\"email\": \"jakafas@gmail.com\",\r\n\t\"password\": \"123\"\r\n}",
+							"raw": "{\r\n\t\"nama_lengkap\": \"Jaka Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jember\",\r\n\t\"email\": \"jakafaas@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -146,6 +146,32 @@
 					"response": []
 				},
 				{
+					"name": "Baca Seluruh Data Buku (Pagination)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/buku?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"buku"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Baca 1 Data Buku",
 					"request": {
 						"method": "GET",
@@ -225,7 +251,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODA2NzIwMjEsImV4cCI6MTY4MDc1ODQyMX0.C254sNby9p9ZSFXKO8QoYatUZ0Q5x5vsZPWejUcoFck",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODA3ODQ5ODcsImV4cCI6MTY4MDg3MTM4N30.4okmijBVKQy-EBe53aGbrsEC2ujF8w7lU6vhTebNGI0",
 				"type": "string"
 			}
 		]
