@@ -116,7 +116,7 @@ export default function Buku() {
 							<h4 className="card-title">Edit Data Buku</h4>
 						</div>
 						<div className="card-body">
-							<form method="POST" className="form-data" id="form-data">
+							<form method="POST" className="form-data" id="form-data" onSubmit={handleInput}>
 								<div className="form-group">
 									<input type="hidden" name="buku_id" id="buku_id" defaultValue={dataBuku?.buku_id} onChange={handleChange} />
 									<label htmlFor="judul_buku" className="form-label">
@@ -176,7 +176,7 @@ export default function Buku() {
 										disabled
 									/>
 								</div>
-								<button type="submit" name="submit" className="btn btn-primary simpan" id="simpan" onClick={handleInput}>
+								<button type="submit" name="submit" className="btn btn-primary simpan" id="simpan">
 									Submit
 								</button>
 							</form>

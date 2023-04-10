@@ -88,7 +88,7 @@ export default function Buku() {
 							<h4 className="card-title">Tambah Data Buku</h4>
 						</div>
 						<div className="card-body">
-							<form method="POST" className="form-data" id="form-data">
+							<form method="POST" className="form-data" id="form-data" onSubmit={handleInput}>
 								<div className="form-group">
 									<label htmlFor="judul_buku" className="form-label">
 										Judul Buku
@@ -137,7 +137,7 @@ export default function Buku() {
 									</label>
 									<input type="text" name="cover_buku" id="cover_buku" className="form-control" placeholder="Masukkan URL Cover Buku" required defaultValue={dataBuku?.cover_buku} onChange={handleChange} />
 								</div>
-								<button type="submit" name="submit" className="btn btn-primary simpan" id="simpan" onClick={handleInput}>
+								<button type="submit" name="submit" className="btn btn-primary simpan" id="simpan">
 									Submit
 								</button>
 							</form>

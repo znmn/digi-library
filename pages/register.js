@@ -85,7 +85,7 @@ export default function Register() {
 								{/* Nested Row within Card Body */}
 								<div className=" d-none d-lg-block" />
 								<div className=" mt-2">
-									<form action="#" method="POST" id="form-data" className="form-data">
+									<form action="#" method="POST" id="form-data" className="form-data" onSubmit={handleRegister}>
 										<div className="col-md-12">
 											<h3 align="center">Halaman Register Admin</h3>
 											<hr />
@@ -142,7 +142,7 @@ export default function Register() {
 													Sudah punya akun? <a href="/login">Login</a>
 												</p>
 											</div>
-											<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3" onClick={handleRegister}>
+											<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3">
 												Submit
 											</button>
 											<br />

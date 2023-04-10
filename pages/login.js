@@ -80,7 +80,7 @@ export default function login() {
 								{/* Nested Row within Card Body */}
 								<div className=" d-none d-lg-block" />
 								<div className=" mt-2">
-									<form action="#" method="POST">
+									<form action="#" method="POST" onSubmit={handleLogin}>
 										<div className="col-md-12">
 											<h3 align="center">Halaman Login Admin</h3>
 											<hr />
@@ -88,19 +88,19 @@ export default function login() {
 												<label htmlFor="email" style={{ marginLeft: "2%" }}>
 													Email:
 												</label>
-												<input type="text" id="email" name="email" placeholder="Email : nancysmith24@gmail.com" className="form form-lg form-control mt-2" onChange={handleChange} />
+												<input type="text" id="email" name="email" placeholder="Masukkan email anda" className="form form-lg form-control mt-2" onChange={handleChange} required />
 											</div>
 											<div className="mt-3 mb-3 form-group">
 												<label htmlFor="password" style={{ marginLeft: "2%" }}>
 													Password:
 												</label>
-												<input type="password" id="password" name="password" placeholder="Password : admin_secret1" className="form form-lg form-control mt-2" onChange={handleChange} />
+												<input type="password" id="password" name="password" placeholder="Masukkan passsword anda" className="form form-lg form-control mt-2" onChange={handleChange} required />
 											</div>
 											<p>
 												Belum punya akun? <a href="/register">Register</a>
 											</p>
 										</div>
-										<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3" onClick={handleLogin}>
+										<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3">
 											Login
 										</button>
 										<br />
