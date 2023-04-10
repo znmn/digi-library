@@ -84,13 +84,13 @@ export default function Buku({ books }) {
 												<h5 className="card-title">{book.judul_buku}</h5>
 											</div>
 										</div>
-										<img src={book.cover_buku} />
+										<img src={book.cover_buku} width={313} height={477} />
 										<ul className="list-group list-group-flush">
 											<li className="list-group-item">
-												<i className="bi bi-person" /> {book.nama_penulis}
+												<i className="bi bi-upc-scan" /> {book.isbn || "-"}
 											</li>
 											<li className="list-group-item">
-												<i className="bi bi-journal-text" /> {book.deskripsi}
+												<i className="bi bi-person" /> {book.nama_penulis}
 											</li>
 											<li className="list-group-item">
 												<i className="bi bi-book" /> {book.jumlah_halaman} Halaman

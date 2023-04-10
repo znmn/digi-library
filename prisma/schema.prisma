@@ -5,15 +5,16 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 // Define table models
 model buku {
   buku_id             Int                 @id @default(autoincrement())
+  isbn                String?             @unique @db.VarChar(15)
   judul_buku          String              @db.VarChar(100)
   nama_penulis        String              @db.VarChar(50)
   tahun_terbit        Int
-  deskripsi           String              @default("-") @db.VarChar(500)
   jumlah_halaman      Int
   waktu_peminjaman    Int                 @default(7)
   cover_buku          String              @db.VarChar(150)

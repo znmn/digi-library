@@ -11,6 +11,7 @@ export async function getServerSideProps(ctx) {
 export default function Buku() {
 	const router = useRouter();
 	const [dataBuku, setDataBuku] = useState({
+		isbn: null,
 		judul_buku: "",
 		nama_penulis: "",
 		jumlah_halaman: 0,
@@ -37,7 +38,7 @@ export default function Buku() {
 			}).then((res) => res.json());
 
 			if (res?.success) router.push("/buku");
-			else console.log(`Error Submitting data: ${res?.message || "Unknown"}`);
+			else alert(res?.message || "Error: Unknown");
 		} catch (e) {
 			console.log(`Error Submitting data: ${e.message}`);
 		}
@@ -90,16 +91,32 @@ export default function Buku() {
 						<div className="card-body">
 							<form method="POST" className="form-data" id="form-data" onSubmit={handleInput}>
 								<div className="form-group">
+									<label htmlFor="isbn" className="form-label">
+										ISBN
+									</label>
+									<input
+										type="number"
+										name="isbn"
+										id="isbn"
+										className="form-control"
+										placeholder="Masukkan ISBN Buku"
+										min={1000000000000}
+										max={999999999999999}
+										value={dataBuku?.isbn || ""}
+										onChange={handleChange}
+									/>
+								</div>
+								<div className="form-group">
 									<label htmlFor="judul_buku" className="form-label">
 										Judul Buku
 									</label>
-									<input type="text" name="judul_buku" id="judul_buku" className="form-control" placeholder="Masukkan Judul Buku" required defaultValue={dataBuku?.judul_buku} onChange={handleChange} />
+									<input type="text" name="judul_buku" id="judul_buku" className="form-control" placeholder="Masukkan Judul Buku" required value={dataBuku?.judul_buku || ""} onChange={handleChange} />
 								</div>
 								<div className="form-group">
 									<label htmlFor="nama_penulis" className="form-label">
 										Nama Penulis
 									</label>
-									<input type="text" name="nama_penulis" id="nama_penulis" className="form-control" placeholder="Masukkan Nama Penulis" required defaultValue={dataBuku?.nama_penulis} onChange={handleChange} />
+									<input type="text" name="nama_penulis" id="nama_penulis" className="form-control" placeholder="Masukkan Nama Penulis" required value={dataBuku?.nama_penulis || ""} onChange={handleChange} />
 								</div>
 								<div className="mb-3">
 									<label htmlFor="jumlah_halaman" className="form-label">
@@ -112,7 +129,7 @@ export default function Buku() {
 										className="form-control"
 										placeholder="Masukkan Jumlah Halaman"
 										required
-										defaultValue={dataBuku?.jumlah_halaman}
+										value={dataBuku?.jumlah_halaman || ""}
 										onChange={handleChange}
 									/>
 								</div>
@@ -120,22 +137,13 @@ export default function Buku() {
 									<label htmlFor="tahun_terbit" className="form-label">
 										Tahun Terbit
 									</label>
-									<input
-										type="number"
-										name="tahun_terbit"
-										id="tahun_terbit"
-										className="form-control"
-										placeholder="Masukkan Tahun Terbit"
-										required
-										defaultValue={dataBuku?.tahun_terbit}
-										onChange={handleChange}
-									/>
+									<input type="number" name="tahun_terbit" id="tahun_terbit" className="form-control" placeholder="Masukkan Tahun Terbit" required value={dataBuku?.tahun_terbit || ""} onChange={handleChange} />
 								</div>
 								<div className="mb-3">
 									<label htmlFor="cover_buku" className="form-label">
 										Cover Image (URL)
 									</label>
-									<input type="text" name="cover_buku" id="cover_buku" className="form-control" placeholder="Masukkan URL Cover Buku" required defaultValue={dataBuku?.cover_buku} onChange={handleChange} />
+									<input type="text" name="cover_buku" id="cover_buku" className="form-control" placeholder="Masukkan URL Cover Buku" required value={dataBuku?.cover_buku || ""} onChange={handleChange} />
 								</div>
 								<button type="submit" name="submit" className="btn btn-primary simpan" id="simpan">
 									Submit
