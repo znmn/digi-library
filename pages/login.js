@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRef } from "react";
 import Cookies from "js-cookie";
 import { unAuthPage } from "@/middlewares/middlewarePage";
 
@@ -11,19 +11,17 @@ export async function getServerSideProps(ctx) {
 export default function login() {
 	const cookieExpire = process.env.COOKIE_EXPIRE;
 	const router = useRouter();
-	const [dataLogin, setDataLogin] = useState({
-		email: "",
-		password: "",
-	});
+
+	const dataLogin = useRef({ email: "", password: "" });
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
-		setDataLogin({ ...dataLogin, [name]: value });
+		dataLogin.current[name] = value;
 	};
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		if (!Object.values(dataLogin).every((field) => field.trim())) {
+		if (!Object.values(dataLogin.current).every((field) => field.trim())) {
 			alert("Email dan Password tidak boleh kosong");
 			return;
 		}
@@ -34,7 +32,7 @@ export default function login() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify(dataLogin),
+				body: JSON.stringify(dataLogin.current),
 			}).then((res) => res.json());
 
 			if (res?.success) {
@@ -88,7 +86,7 @@ export default function login() {
 												<label htmlFor="email" style={{ marginLeft: "2%" }}>
 													Email:
 												</label>
-												<input type="text" id="email" name="email" placeholder="Masukkan email anda" className="form form-lg form-control mt-2" onChange={handleChange} required />
+												<input type="email" id="email" name="email" placeholder="Masukkan email anda" className="form form-lg form-control mt-2" onChange={handleChange} required />
 											</div>
 											<div className="mt-3 mb-3 form-group">
 												<label htmlFor="password" style={{ marginLeft: "2%" }}>

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRef } from "react";
 import { unAuthPage } from "@/middlewares/middlewarePage";
 
 export async function getServerSideProps(ctx) {
@@ -9,7 +9,8 @@ export async function getServerSideProps(ctx) {
 
 export default function Register() {
 	const router = useRouter();
-	const [dataUser, setDataUser] = useState({
+
+	const dataUser = useRef({
 		email: "",
 		password: "",
 		kode_daftar: "",
@@ -22,12 +23,12 @@ export default function Register() {
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
-		setDataUser({ ...dataUser, [name]: value });
+		dataUser.current[name] = value;
 	};
 
 	const handleRegister = async (e) => {
 		e.preventDefault();
-		if (!Object.values(dataUser).every((field) => field.trim())) {
+		if (!Object.values(dataUser.current).every((field) => field.trim())) {
 			alert("Semua data harus diisi");
 			return;
 		}
@@ -38,7 +39,7 @@ export default function Register() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify(dataUser),
+				body: JSON.stringify(dataUser.current),
 			}).then((res) => res.json());
 
 			if (res?.success) {
@@ -93,7 +94,7 @@ export default function Register() {
 												<label htmlFor="email" style={{ marginLeft: "2%" }}>
 													Email:
 												</label>
-												<input type="text" id="email" name="email" placeholder="Masukkan email anda" className="form form-lg form-control mt-2" required onChange={handleChange} />
+												<input type="email" id="email" name="email" placeholder="Masukkan email anda" className="form form-lg form-control mt-2" required onChange={handleChange} />
 											</div>
 											<div className="mt-3 mb-3 form-group">
 												<label htmlFor="password" style={{ marginLeft: "2%" }}>
@@ -103,7 +104,7 @@ export default function Register() {
 											</div>
 											<div className="mt-3 mb-3 form-group">
 												<label htmlFor="kode_daftar" style={{ marginLeft: "2%" }}>
-													kode Daftar:
+													Kode Daftar:
 												</label>
 												<input type="kode_daftar" id="kode_daftar" name="kode_daftar" placeholder="Masukkan kode daftar" className="form form-lg form-control mt-2" required onChange={handleChange} />
 											</div>
@@ -117,7 +118,16 @@ export default function Register() {
 												<label htmlFor="no_telp" style={{ marginLeft: "2%" }}>
 													No Telepon:
 												</label>
-												<input type="number" id="no_telp" name="no_telp" placeholder="Masukkan nomor telepon Anda" className="form form-lg form-control mt-2" required onChange={handleChange} />
+												<input
+													type="tel"
+													pattern="(628|08)[0-9]{9,12}"
+													id="no_telp"
+													name="no_telp"
+													placeholder="Masukkan nomor telepon Anda (08xxxxxxxxxx)"
+													className="form form-lg form-control mt-2"
+													required
+													onChange={handleChange}
+												/>
 											</div>
 											<div className="mt-3 form-group">
 												<label htmlFor="alamat" style={{ marginLeft: "2%" }}>

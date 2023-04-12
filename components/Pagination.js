@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Pagination({ pages: { current, total } }) {
+export default function Pagination({ pages: { current = 1, total = 3 } }) {
 	if (!current || !total) return;
 
 	const renderPagination = () => {

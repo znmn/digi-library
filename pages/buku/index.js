@@ -14,7 +14,7 @@ export async function getServerSideProps(ctx) {
 	return { props: { books } };
 }
 
-export default function Buku({ books }) {
+export default function Buku({ books = [] }) {
 	const router = useRouter(),
 		{ page } = router.query;
 
