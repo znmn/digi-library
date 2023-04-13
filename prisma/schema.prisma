@@ -18,46 +18,30 @@ model buku {
   jumlah_halaman      Int
   waktu_peminjaman    Int                 @default(7)
   cover_buku          String              @db.VarChar(150)
-  detail_peminjaman   detail_peminjaman[]
-}
-
-model detail_peminjaman {
-  detail_peminjaman_id Int        @id @default(autoincrement())
-  status               Int        @default(0)
-  buku_id              Int
-  peminjaman_id        Int
-  staff_id             Int
-  buku                 buku       @relation(fields: [buku_id], references: [buku_id])
-  peminjaman           peminjaman @relation(fields: [peminjaman_id], references: [peminjaman_id])
-  staff                staff      @relation(fields: [staff_id], references: [staff_id])
+  peminjaman   peminjaman[]
 }
 
 model peminjaman {
   peminjaman_id        Int                @id @default(autoincrement())
-  nim_peminjam         BigInt
+  di_kembalikan        Boolean            @default(false)
+  nim_peminjam         String             @db.VarChar(15)
   tanggal_peminjaman   DateTime           @default(now())
-  tanggal_pengembalian DateTime
-  detail_peminjaman    detail_peminjaman[]
+  tanggal_pengembalian DateTime?
+  buku_id              Int
+  staff_id             Int
+  buku                 buku               @relation(fields: [buku_id], references: [buku_id])
+  staff                staff              @relation(fields: [staff_id], references: [staff_id])
 }
 
 model staff {
   staff_id          Int                @id @default(autoincrement())
+  email             String             @unique @db.VarChar(50)
+  password          String             @db.VarChar(100)
   nama_lengkap      String             @db.VarChar(50)
   no_telp           String             @db.VarChar(15)
   tanggal_lahir     DateTime
   tanggal_masuk     DateTime           @default(now())
   alamat            String             @db.VarChar(150)
   kota              String             @db.VarChar(50)
-  email             String             @unique
-  password          String             @db.VarChar(100)
-  detail_peminjaman detail_peminjaman[]
-  kode_daftar       kode_daftar[]
-}
-
-model kode_daftar {
-  kode_daftar_id Int  @id      @default(autoincrement())
-  kode_daftar         String   @unique
-  staff_id            Int
-  pembuat             staff    @relation(fields: [staff_id], references: [staff_id])
-  is_used             Boolean  @default(false)
+  peminjaman        peminjaman[]
 }

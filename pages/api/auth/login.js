@@ -25,7 +25,7 @@ export default async function handle(req, res) {
 					return res.status(400).json({ success, message: "Invalid password" });
 				}
 
-				const token = jwt.sign({ userId: admin.id }, JWT_SECRET, { expiresIn: JWT_EXPIRY });
+				const token = jwt.sign({ userId: admin.staff_id }, JWT_SECRET, { expiresIn: JWT_EXPIRY });
 
 				res.setHeader("Authorization", `Bearer ${token}`);
 				res.setHeader("Set-Cookie", `token=${token}; Path=/; Max-Age=86400`);

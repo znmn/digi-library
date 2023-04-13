@@ -31,7 +31,7 @@ export default function Sidebar({}) {
 							</a>
 						</li>
 						<li className="sidebar-item">
-							<form action="/logout" method="POST">
+							<form action="/auth/logout" method="POST">
 								<button type="submit" className="sidebar-link">
 									<i className="bi bi-box-arrow-right" />
 									<span>Logout</span>

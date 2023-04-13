@@ -14,7 +14,7 @@ export async function getServerSideProps(ctx) {
 	return { props: { books } };
 }
 
-export default function Buku({ books = [] }) {
+export default function Buku({ books }) {
 	const router = useRouter(),
 		{ page } = router.query;
 
@@ -76,7 +76,7 @@ export default function Buku({ books = [] }) {
 					</div>
 					<div id="data" className="mt-4">
 						<div className="row">
-							{books.data.map((book) => (
+							{books.data?.map((book) => (
 								<div className="col-lg-4 col-md-5" key={book.buku_id}>
 									<div className="card">
 										<div className="card-content">
@@ -99,7 +99,7 @@ export default function Buku({ books = [] }) {
 												<i className="bi bi-calendar-event" /> {book.tahun_terbit}
 											</li>
 										</ul>
-										<a href="#" className="btn btn-primary">
+										<a href={`/peminjaman/tambah/${book.buku_id}`} className="btn btn-primary">
 											Pinjam
 										</a>
 										<a href={`/buku/${book.buku_id}`} className="btn btn-warning">

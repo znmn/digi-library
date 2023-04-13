@@ -44,7 +44,7 @@ export default function Register() {
 
 			if (res?.success) {
 				alert("Berhasil mendaftar, silahkan login");
-				router.push("/login");
+				router.push("/auth/login");
 			} else alert(res?.message || "Error: Unknown");
 		} catch (e) {
 			console.log(`Error Submitting data: ${e.message}`);

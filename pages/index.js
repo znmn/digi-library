@@ -1,7 +1,7 @@
 export async function getServerSideProps(ctx) {
 	ctx.res
 		.writeHead(302, {
-			Location: "/login",
+			Location: "/auth/login",
 		})
 		.end();
 	return { props: {} };

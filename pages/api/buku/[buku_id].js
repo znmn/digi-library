@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 import prisma from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
 import authMiddleware from "@/middlewares/middleware";

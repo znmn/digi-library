@@ -55,7 +55,6 @@ export default function Buku() {
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
-		console.log(name, value);
 		setDataBuku({ ...dataBuku, [name]: value });
 	};
 
@@ -120,7 +119,7 @@ export default function Buku() {
 						<div className="card-body">
 							<form method="POST" className="form-data" id="form-data" onSubmit={handleInput}>
 								<div className="form-group">
-									<input type="hidden" name="buku_id" id="buku_id" value={dataBuku?.buku_id} />
+									<input type="hidden" name="buku_id" id="buku_id" defaultValue={dataBuku?.buku_id} />
 									<label htmlFor="isbn" className="form-label">
 										ISBN
 									</label>

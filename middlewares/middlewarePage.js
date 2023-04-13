@@ -31,7 +31,7 @@ export function authPage(ctx) {
 		} catch (err) {
 			return ctx.res
 				.writeHead(302, {
-					Location: "/login",
+					Location: "/auth/login",
 				})
 				.end();
 		}

@@ -9,7 +9,7 @@ export default function Logout() {
 		localStorage.removeItem("token");
 		Cookies.remove("token");
 
-		router.push("/login");
+		router.push("/auth/login");
 	}, []);
 
 	return (
