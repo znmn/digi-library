@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nama_lengkap\": \"Jaka Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jember\",\r\n\t\"email\": \"jakafaas@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
+							"raw": "{\r\n\t\"nama_lengkap\": \"Zain Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jakarta\",\r\n\t\"email\": \"zain@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jakafas@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"raw": "{\r\n    \"email\": \"zain@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -103,7 +103,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,7 +177,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku/1",
+							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -186,14 +186,14 @@
 							"path": [
 								"api",
 								"buku",
-								"1"
+								"{{buku_id}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update 1 Data Buku Copy",
+					"name": "Update 1 Data Buku",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -207,7 +207,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/buku/1",
+							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -216,7 +216,7 @@
 							"path": [
 								"api",
 								"buku",
-								"1"
+								"{{buku_id}}"
 							]
 						}
 					},
@@ -228,7 +228,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku/1",
+							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -237,7 +237,163 @@
 							"path": [
 								"api",
 								"buku",
-								"1"
+								"{{buku_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Peminjaman",
+			"item": [
+				{
+					"name": "Tambah Data Peminjaman",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nim_peminjam\": 123456789012,\r\n    \"buku_id\": {{buku_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Baca Seluruh Data Peminjaman",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Baca Detail Data Peminjaman",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman",
+								"{{peminjaman_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update 1 Data Peminjaman (Mengembalikan)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"di_kembalikan\":true,\"tanggal_pengembalian\":\"2023-04-13\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman",
+								"{{peminjaman_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update 1 Data Peminjaman (Ubah tgl Peminjaman)",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_peminjaman\": \"2023/04/13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman",
+								"{{peminjaman_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hapus 1 Data Peminjaman",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"peminjaman",
+								"{{peminjaman_id}}"
 							]
 						}
 					},
@@ -251,7 +407,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODA3ODQ5ODcsImV4cCI6MTY4MDg3MTM4N30.4okmijBVKQy-EBe53aGbrsEC2ujF8w7lU6vhTebNGI0",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY4MTQ3MDQ2MiwiZXhwIjoxNjgxNTU2ODYyfQ.q26Y5GVX5Lpr8l1AY-G6NazRybkjBg6Gx1Q6FO6uWms",
 				"type": "string"
 			}
 		]
@@ -274,6 +430,16 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "buku_id",
+			"value": "1"
+		},
+		{
+			"key": "peminjaman_id",
+			"value": "1"
 		}
 	]
 }

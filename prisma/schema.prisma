@@ -29,8 +29,8 @@ model peminjaman {
   tanggal_pengembalian DateTime?
   buku_id              Int
   staff_id             Int
-  buku                 buku               @relation(fields: [buku_id], references: [buku_id])
-  staff                staff              @relation(fields: [staff_id], references: [staff_id])
+  buku                 buku               @relation(fields: [buku_id], references: [buku_id], onDelete: Cascade)
+  staff                staff              @relation(fields: [staff_id], references: [staff_id], onDelete: Cascade)
 }
 
 model staff {

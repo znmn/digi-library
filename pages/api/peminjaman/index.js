@@ -56,6 +56,9 @@ export default authMiddleware(async function handle(req, res) {
 			const staff_id = req.user?.userId;
 			if (!nim_peminjam || !buku_id || !staff_id) return res.status(400).json({ success, message: "nim_peminjam, buku_id, and staff_id field are required" });
 
+			const isBookExist = await prisma.buku.findUnique({ where: { buku_id } });
+			if (!isBookExist) return res.status(400).json({ success, message: "Book not found" });
+
 			const peminjaman = await prisma.peminjaman.create({
 				data: {
 					nim_peminjam: String(nim_peminjam),

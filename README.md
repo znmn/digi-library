@@ -11,18 +11,13 @@
 
 ```sh
 npm run setup
+npm run build
 ```
 
 ## Usage
 
 ```sh
 npm run start
-```
-
-## Usage (Development)
-
-```sh
-npm run dev
 ```
 
 ## Show your support
