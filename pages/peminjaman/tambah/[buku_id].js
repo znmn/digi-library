@@ -69,7 +69,7 @@ export default function TambahPeminjaman({}) {
 		<>
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<title>Peminjaman | My DigiLibrary</title>
+			<title>Peminjaman | E-Library</title>
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app.css" />
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app-dark.css" />
 			<style

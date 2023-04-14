@@ -67,7 +67,7 @@ export default function Peminjaman({ peminjaman = [] }) {
 		<>
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<title>Data Peminjaman | My DigiLibrary</title>
+			<title>Data Peminjaman | E-Library</title>
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app.css" />
 			<link rel="stylesheet" href="/mazer/dist/assets/css/main/app-dark.css" />
 			<link rel="stylesheet" href="/mazer/dist/assets/css/pages/fontawesome.css" />
