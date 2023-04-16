@@ -95,7 +95,7 @@ export default function login() {
 												<input type="password" id="password" name="password" placeholder="Masukkan passsword anda" className="form form-lg form-control mt-2" onChange={handleChange} required />
 											</div>
 											<p>
-												Belum punya akun? <a href="/register">Register</a>
+												Belum punya akun? <a href="/auth/register">Register</a>
 											</p>
 										</div>
 										<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3">
