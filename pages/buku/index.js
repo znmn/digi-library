@@ -8,7 +8,7 @@ export async function getServerSideProps(ctx) {
 	const { token } = await authPage(ctx);
 
 	const page = ctx.query.page || 1;
-	const books = await fetch(`http://${ctx.req.headers.host}/api/buku?page=${page}`)
+	const books = await fetch(`${process.env.HOST}/api/buku?page=${page}`)
 		.then((res) => res.json())
 		.catch([]);
 	return { props: { books } };

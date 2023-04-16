@@ -2,11 +2,12 @@ import Sidebar from "@/components/Sidebar";
 import { useScript } from "@/lib/helpers";
 import { useRouter } from "next/router";
 import { authPage } from "@/middlewares/middlewarePage";
+import ErrorIgnore from "@/components/ErrorIgnore";
 
 export async function getServerSideProps(ctx) {
 	const { token } = await authPage(ctx);
 
-	const peminjaman = await fetch(`http://${ctx.req.headers.host}/api/peminjaman`)
+	const peminjaman = await fetch(`${process.env.HOST}/api/peminjaman`)
 		.then((res) => res.json())
 		.catch([]);
 	return { props: { peminjaman } };
@@ -65,6 +66,7 @@ export default function Peminjaman({ peminjaman = [] }) {
 
 	return (
 		<>
+			<ErrorIgnore />
 			<meta charSet="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<title>Data Peminjaman | E-Library</title>
