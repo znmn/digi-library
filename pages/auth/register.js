@@ -149,7 +149,7 @@ export default function Register() {
 											</div>
 											<div>
 												<p className="mt-3">
-													Sudah punya akun? <a href="/login">Login</a>
+													Sudah punya akun? <a href="/auth/login">Login</a>
 												</p>
 											</div>
 											<button type="submit" name="submit" className="btn btn-primary col-md-12 col-xs-12 mt-3">
