@@ -18,7 +18,7 @@ export default async function handle(req, res) {
 					return res.status(400).json({ success, message: "Admin with this email already exist" });
 				}
 
-				if (!(kode_daftar == secret)) {
+				if (kode_daftar != secret) {
 					return res.status(400).json({ success, message: "Invalid register code" });
 				}
 
