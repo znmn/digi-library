@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"nama_lengkap\": \"Zain Satu\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jakarta\",\r\n\t\"email\": \"zain@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
+							"raw": "{\r\n\t\"nama_lengkap\": \"Zainul Muhaimin\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jakarta\",\r\n\t\"email\": \"zain@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,12 +23,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/auth/register",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/auth/register",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -36,7 +34,164 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nama_lengkap\": \"Zainul Muhaimin\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jakarta\",\r\n\t\"email\": \"zain@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "245"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:01:18 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"abkvzt52v76t\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/auth/register"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::ldmh5-1685080869295-ec314d357d7c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"staff_id\": 3,\n        \"email\": \"zain@gmail.com\",\n        \"nama_lengkap\": \"Zainul Muhaimin\",\n        \"no_telp\": \"081234567890\",\n        \"tanggal_lahir\": \"2001-01-01T00:00:00.000Z\",\n        \"tanggal_masuk\": \"2023-05-26T06:01:16.751Z\",\n        \"alamat\": \"Jl jawa 2\",\n        \"kota\": \"Jakarta\"\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nama_lengkap\": \"Zainul Muhaimin\",\r\n\t\"no_telp\": \"081234567890\",\r\n\t\"tanggal_lahir\": \"2001-01-01\",\r\n\t\"alamat\": \"Jl jawa 2\",\r\n\t\"kota\": \"Jakarta\",\r\n\t\"email\": \"zain@gmail.com\",\r\n\t\"password\": \"123\",\r\n    \"kode_daftar\": \"AdminOnly\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:02:51 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"1emb2q5yl11t\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/auth/register"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::tc68f-1685080971262-0676481bc35f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Admin with this email already exist\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Login Admin",
@@ -53,12 +208,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/auth/login",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/auth/login",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"auth",
@@ -66,7 +219,172 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zain@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY4NTA4MTAwOCwiZXhwIjoxNjg1MTY3NDA4fQ.-QwEOyCuTjj-eNpYgxQUWD-oVjJBrOvkcGjnvc_FfKM"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:03:28 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"wyjtt76bo14q\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY4NTA4MTAwOCwiZXhwIjoxNjg1MTY3NDA4fQ.-QwEOyCuTjj-eNpYgxQUWD-oVjJBrOvkcGjnvc_FfKM; Path=/; Max-Age=86400"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/auth/login"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::7nnlf-1685081008007-adb550a1af64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTY4NTA4MTAwOCwiZXhwIjoxNjg1MTY3NDA4fQ.-QwEOyCuTjj-eNpYgxQUWD-oVjJBrOvkcGjnvc_FfKM\"\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"zain@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:03:53 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"9d8lm45syh1a\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/auth/login"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::k59nc-1685081032538-1319b21d271f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid password\"\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -111,19 +429,249 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/buku",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/buku",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:07:04 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"ihsoj5xkwt6z\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::qrvsj-1685081222560-6ae90c6eb261"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"buku_id\": 13,\n        \"isbn\": \"2871527391820\",\n        \"judul_buku\": \"Guru Aini\",\n        \"nama_penulis\": \"Aini\",\n        \"tahun_terbit\": 2019,\n        \"jumlah_halaman\": 82,\n        \"waktu_peminjaman\": 7,\n        \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/buku",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:07:23 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"10tsvyf2iap1o\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::tvzqs-1685081242731-1feb6fd37ee3"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Buku dengan ISBN ini sudah ada\"\n}"
+						},
+						{
+							"name": "No Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_buku\": \"Guru Aini\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": 2019,\r\n    \"jumlah_halaman\": 82,\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/buku",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:05:52 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"hwxzxeosy8q\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::5gwbj-1685081151818-3ab6204af7ec"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthorized\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Baca Seluruh Data Buku",
@@ -131,19 +679,90 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/buku",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:08:01 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2fjcdte0o524p\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "BYPASS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::s8lnl-1685081280535-8ab79595f1fc"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"buku_id\": 2,\n            \"isbn\": \"222222222222222\",\n            \"judul_buku\": \"Atomic Habbits\",\n            \"nama_penulis\": \"James Clear\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 356,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786020633176_.Atomic_Habit.jpg\"\n        },\n        {\n            \"buku_id\": 3,\n            \"isbn\": \"9786230404306\",\n            \"judul_buku\": \"Bicara Itu Ada Seninya\",\n            \"nama_penulis\": \"Oh Su Hyang\",\n            \"tahun_terbit\": 2021,\n            \"jumlah_halaman\": 256,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786024553920.png\"\n        },\n        {\n            \"buku_id\": 11,\n            \"isbn\": \"9786237324515\",\n            \"judul_buku\": \"Buki Sakti HTML CSS JavaScript\",\n            \"nama_penulis\": \"Adam Saputra\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 270,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/img263_TOe77MD.jpg\"\n        },\n        {\n            \"buku_id\": 1,\n            \"isbn\": \"1111111111111\",\n            \"judul_buku\": \"Bumi\",\n            \"nama_penulis\": \"Tereliye\",\n            \"tahun_terbit\": 2008,\n            \"jumlah_halaman\": 200,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://upload.wikimedia.org/wikipedia/id/4/49/Bumi_%28sampul%29.jpg\"\n        },\n        {\n            \"buku_id\": 6,\n            \"isbn\": \"9786233463034\",\n            \"judul_buku\": \"Filosofi Teras\",\n            \"nama_penulis\": \"Hendri Manam Piring\",\n            \"tahun_terbit\": 2022,\n            \"jumlah_halaman\": 298,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/img20220101_11444970.jpg\"\n        },\n        {\n            \"buku_id\": 12,\n            \"isbn\": \"9789792152951\",\n            \"judul_buku\": \"Filsafat Moral\",\n            \"nama_penulis\": \"Dr. Agustinus W. Dewantara, S.S.,M.Hum\",\n            \"tahun_terbit\": 2017,\n            \"jumlah_halaman\": 128,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Filsafat-Moral.jpg\"\n        },\n        {\n            \"buku_id\": 13,\n            \"isbn\": \"2871527391820\",\n            \"judul_buku\": \"Guru Aini\",\n            \"nama_penulis\": \"Aini\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 82,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n        },\n        {\n            \"buku_id\": 4,\n            \"isbn\": \"14350555555555\",\n            \"judul_buku\": \"Laut Bercerita\",\n            \"nama_penulis\": \"Lyla S Chodiri\",\n            \"tahun_terbit\": 2017,\n            \"jumlah_halaman\": 394,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png\"\n        },\n        {\n            \"buku_id\": 9,\n            \"isbn\": \"9786237131601\",\n            \"judul_buku\": \"Machine Learning untuk Pemula\",\n            \"nama_penulis\": \"Irwansyah Saputra\",\n            \"tahun_terbit\": 2022,\n            \"jumlah_halaman\": 413,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Machine_Learning_Untuk_Pemula.jpg\"\n        },\n        {\n            \"buku_id\": 7,\n            \"isbn\": \"9789792809046\",\n            \"judul_buku\": \"Pendidikan Kewarganegaraan\",\n            \"nama_penulis\": \"Yana Suryana\",\n            \"tahun_terbit\": 2016,\n            \"jumlah_halaman\": 170,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9789792809046_SD-MI-KL-1-SB.jpg\"\n        },\n        {\n            \"buku_id\": 8,\n            \"isbn\": \"9786237498971\",\n            \"judul_buku\": \"Python for Machine Learning\",\n            \"nama_penulis\": \"Teguh Wahyono\",\n            \"tahun_terbit\": 2021,\n            \"jumlah_halaman\": 156,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Python_For_Machine_Learning_Edisi_Revisi.jpg\"\n        }\n    ],\n    \"jumlah\": 11\n}"
+						}
+					]
 				},
 				{
 					"name": "Baca Seluruh Data Buku (Pagination)",
@@ -151,12 +770,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku?page=1",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku?page=1",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku"
@@ -169,7 +786,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/buku?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:08:34 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2fjcdte0o524p\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "BYPASS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::frrkd-1685081313447-bda8e951917a"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"buku_id\": 2,\n            \"isbn\": \"222222222222222\",\n            \"judul_buku\": \"Atomic Habbits\",\n            \"nama_penulis\": \"James Clear\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 356,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786020633176_.Atomic_Habit.jpg\"\n        },\n        {\n            \"buku_id\": 3,\n            \"isbn\": \"9786230404306\",\n            \"judul_buku\": \"Bicara Itu Ada Seninya\",\n            \"nama_penulis\": \"Oh Su Hyang\",\n            \"tahun_terbit\": 2021,\n            \"jumlah_halaman\": 256,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786024553920.png\"\n        },\n        {\n            \"buku_id\": 11,\n            \"isbn\": \"9786237324515\",\n            \"judul_buku\": \"Buki Sakti HTML CSS JavaScript\",\n            \"nama_penulis\": \"Adam Saputra\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 270,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/img263_TOe77MD.jpg\"\n        },\n        {\n            \"buku_id\": 1,\n            \"isbn\": \"1111111111111\",\n            \"judul_buku\": \"Bumi\",\n            \"nama_penulis\": \"Tereliye\",\n            \"tahun_terbit\": 2008,\n            \"jumlah_halaman\": 200,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://upload.wikimedia.org/wikipedia/id/4/49/Bumi_%28sampul%29.jpg\"\n        },\n        {\n            \"buku_id\": 6,\n            \"isbn\": \"9786233463034\",\n            \"judul_buku\": \"Filosofi Teras\",\n            \"nama_penulis\": \"Hendri Manam Piring\",\n            \"tahun_terbit\": 2022,\n            \"jumlah_halaman\": 298,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/img20220101_11444970.jpg\"\n        },\n        {\n            \"buku_id\": 12,\n            \"isbn\": \"9789792152951\",\n            \"judul_buku\": \"Filsafat Moral\",\n            \"nama_penulis\": \"Dr. Agustinus W. Dewantara, S.S.,M.Hum\",\n            \"tahun_terbit\": 2017,\n            \"jumlah_halaman\": 128,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Filsafat-Moral.jpg\"\n        },\n        {\n            \"buku_id\": 13,\n            \"isbn\": \"2871527391820\",\n            \"judul_buku\": \"Guru Aini\",\n            \"nama_penulis\": \"Aini\",\n            \"tahun_terbit\": 2019,\n            \"jumlah_halaman\": 82,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n        },\n        {\n            \"buku_id\": 4,\n            \"isbn\": \"14350555555555\",\n            \"judul_buku\": \"Laut Bercerita\",\n            \"nama_penulis\": \"Lyla S Chodiri\",\n            \"tahun_terbit\": 2017,\n            \"jumlah_halaman\": 394,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png\"\n        },\n        {\n            \"buku_id\": 9,\n            \"isbn\": \"9786237131601\",\n            \"judul_buku\": \"Machine Learning untuk Pemula\",\n            \"nama_penulis\": \"Irwansyah Saputra\",\n            \"tahun_terbit\": 2022,\n            \"jumlah_halaman\": 413,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Machine_Learning_Untuk_Pemula.jpg\"\n        },\n        {\n            \"buku_id\": 7,\n            \"isbn\": \"9789792809046\",\n            \"judul_buku\": \"Pendidikan Kewarganegaraan\",\n            \"nama_penulis\": \"Yana Suryana\",\n            \"tahun_terbit\": 2016,\n            \"jumlah_halaman\": 170,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/9789792809046_SD-MI-KL-1-SB.jpg\"\n        },\n        {\n            \"buku_id\": 8,\n            \"isbn\": \"9786237498971\",\n            \"judul_buku\": \"Python for Machine Learning\",\n            \"nama_penulis\": \"Teguh Wahyono\",\n            \"tahun_terbit\": 2021,\n            \"jumlah_halaman\": 156,\n            \"waktu_peminjaman\": 7,\n            \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/Python_For_Machine_Learning_Edisi_Revisi.jpg\"\n        }\n    ],\n    \"jumlah\": 11\n}"
+						}
+					]
 				},
 				{
 					"name": "Baca 1 Data Buku",
@@ -177,12 +873,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku",
@@ -190,7 +884,81 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Baca 1 Data Buku",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku",
+										"{{buku_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Age",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:13:56 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"zv1rsldnzh6b\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku/[buku_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::tpptp-1685081635531-e139ac4d064f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"buku_id\": 13,\n    \"isbn\": \"2871527391820\",\n    \"judul_buku\": \"Guru Aini\",\n    \"nama_penulis\": \"Aini\",\n    \"tahun_terbit\": 2019,\n    \"jumlah_halaman\": 82,\n    \"waktu_peminjaman\": 7,\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Update 1 Data Buku",
@@ -199,7 +967,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+							"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -207,12 +975,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku",
@@ -220,7 +986,164 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku",
+										"{{buku_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:16:58 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"o4cdhq92j71\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku/[buku_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::qmj4x-1685081817593-55a53693770b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"buku_id\": 13,\n        \"isbn\": \"2871527391820\",\n        \"judul_buku\": \"Guru Aini 3\",\n        \"nama_penulis\": \"Aini\",\n        \"tahun_terbit\": 2019,\n        \"jumlah_halaman\": 82,\n        \"waktu_peminjaman\": 7,\n        \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_buku\": \"Guru Aini 3\",\r\n    \"isbn\": \"2871527391820\",\r\n    \"nama_penulis\": \"Aini\",\r\n    \"tahun_terbit\": \"2019\",\r\n    \"jumlah_halaman\": \"82\",\r\n    \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/buku/22",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku",
+										"22"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:17:37 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"10tsvyf2iap1o\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku/[buku_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::k59nc-1685081856807-db4efa7336ac"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Buku dengan ISBN ini sudah ada\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Hapus 1 Data Buku",
@@ -228,12 +1151,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/buku/{{buku_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"buku",
@@ -241,7 +1162,146 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku",
+										"{{buku_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:18:33 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"o4cdhq92j71\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku/[buku_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::qkvxn-1685081912327-65914d025f22"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"buku_id\": 13,\n        \"isbn\": \"2871527391820\",\n        \"judul_buku\": \"Guru Aini 3\",\n        \"nama_penulis\": \"Aini\",\n        \"tahun_terbit\": 2019,\n        \"jumlah_halaman\": 82,\n        \"waktu_peminjaman\": 7,\n        \"cover_buku\": \"https://cdn.gramedia.com/uploads/items/COVER_GURU_AINI_zELbGLS.png\"\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/buku/{{buku_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"buku",
+										"{{buku_id}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:18:46 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"153xvc74q5w1q\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/buku/[buku_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::rkmbs-1685081925945-85ab341bbb1c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Record to delete does not exist.\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -263,19 +1323,172 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nim_peminjam\": 123456789012,\r\n    \"buku_id\": {{buku_id}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:19:52 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"11cvexbtnt95h\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::9rbv4-1685081990165-7c799f6b7dba"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"peminjaman_id\": 4,\n        \"di_kembalikan\": false,\n        \"nim_peminjam\": \"123456789012\",\n        \"tanggal_peminjaman\": \"2023-05-26T06:19:51.665Z\",\n        \"tanggal_pengembalian\": null,\n        \"buku_id\": 14,\n        \"staff_id\": 3\n    }\n}"
+						},
+						{
+							"name": "Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nim_peminjam\": 123456789012,\r\n    \"buku_id\": {{buku_id}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:20:39 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"zl6elhkdc118\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::zcsz7-1685082038603-aa90c984fb52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Book not found\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Baca Seluruh Data Peminjaman",
@@ -283,19 +1496,86 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "505"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:21:05 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"z03395ihkpe1\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "BYPASS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::rdqj4-1685082063483-62c5bb840438"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"peminjaman_id\": 3,\n            \"tanggal_peminjaman\": \"2023-04-06T00:00:00.000Z\",\n            \"tanggal_pengembalian\": null,\n            \"di_kembalikan\": false,\n            \"nim_peminjam\": \"22222\",\n            \"buku\": {\n                \"judul_buku\": \"Bumi\",\n                \"isbn\": \"1111111111111\"\n            },\n            \"staff\": {\n                \"nama_lengkap\": \"hefrilia afifah\"\n            }\n        },\n        {\n            \"peminjaman_id\": 4,\n            \"tanggal_peminjaman\": \"2023-05-26T06:19:51.665Z\",\n            \"tanggal_pengembalian\": null,\n            \"di_kembalikan\": false,\n            \"nim_peminjam\": \"123456789012\",\n            \"buku\": {\n                \"judul_buku\": \"Guru Aini\",\n                \"isbn\": \"2871527391820\"\n            },\n            \"staff\": {\n                \"nama_lengkap\": \"Zainul Muhaimin\"\n            }\n        }\n    ],\n    \"jumlah\": 2\n}"
+						}
+					]
 				},
 				{
 					"name": "Baca Detail Data Peminjaman",
@@ -303,12 +1583,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman",
@@ -316,7 +1594,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"{{peminjaman_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:21:54 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"l4zn86qz1n6v\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman/[peminjaman_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "BYPASS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::k59nc-1685082113354-f4304054442b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"peminjaman_id\": 4,\n    \"tanggal_peminjaman\": \"2023-05-26T06:19:51.665Z\",\n    \"tanggal_pengembalian\": null,\n    \"di_kembalikan\": false,\n    \"nim_peminjam\": \"123456789012\",\n    \"buku\": {\n        \"judul_buku\": \"Guru Aini\",\n        \"isbn\": \"2871527391820\"\n    },\n    \"staff\": {\n        \"nama_lengkap\": \"Zainul Muhaimin\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Update 1 Data Peminjaman (Mengembalikan)",
@@ -325,7 +1673,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"di_kembalikan\":true,\"tanggal_pengembalian\":\"2023-04-13\"}",
+							"raw": "{\"di_kembalikan\":true,\"tanggal_pengembalian\":\"2023-05-27\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -333,12 +1681,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman",
@@ -346,7 +1692,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"di_kembalikan\":true,\"tanggal_pengembalian\":\"2023-05-27\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"{{peminjaman_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:22:54 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"16qixk1yr0g62\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman/[peminjaman_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::rwm4n-1685082172283-9faedfd4968f"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"peminjaman_id\": 4,\n        \"di_kembalikan\": true,\n        \"nim_peminjam\": \"123456789012\",\n        \"tanggal_peminjaman\": \"2023-05-26T06:19:51.665Z\",\n        \"tanggal_pengembalian\": \"2023-05-27T00:00:00.000Z\",\n        \"buku_id\": 14,\n        \"staff_id\": 3\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Update 1 Data Peminjaman (Ubah tgl Peminjaman)",
@@ -355,7 +1780,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tanggal_peminjaman\": \"2023/04/13\"\r\n}",
+							"raw": "{\r\n    \"tanggal_peminjaman\": \"2023/05/28\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -363,12 +1788,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman",
@@ -376,7 +1799,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tanggal_peminjaman\": \"2023/05/28\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"{{peminjaman_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:24:29 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"s21kujbdfh5h\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman/[peminjaman_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::rq4tn-1685082267592-28a3dc0288df"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"peminjaman_id\": 4,\n        \"di_kembalikan\": false,\n        \"nim_peminjam\": \"123456789012\",\n        \"tanggal_peminjaman\": \"2023-05-28T00:00:00.000Z\",\n        \"tanggal_pengembalian\": null,\n        \"buku_id\": 14,\n        \"staff_id\": 3\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Hapus 1 Data Peminjaman",
@@ -384,12 +1886,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/peminjaman/{{peminjaman_id}}",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"peminjaman",
@@ -397,7 +1897,146 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"{{peminjaman_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:25:02 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"s21kujbdfh5h\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman/[peminjaman_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::7vj74-1685082299927-2e76c009c7c2"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"peminjaman_id\": 4,\n        \"di_kembalikan\": false,\n        \"nim_peminjam\": \"123456789012\",\n        \"tanggal_peminjaman\": \"2023-05-28T00:00:00.000Z\",\n        \"tanggal_pengembalian\": null,\n        \"buku_id\": 14,\n        \"staff_id\": 3\n    }\n}"
+						},
+						{
+							"name": "False",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/peminjaman/{{peminjaman_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"{{peminjaman_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 May 2023 06:25:23 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "\"33ym722eft1p\""
+								},
+								{
+									"key": "Server",
+									"value": "Vercel"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000"
+								},
+								{
+									"key": "X-Matched-Path",
+									"value": "/api/peminjaman/[peminjaman_id]"
+								},
+								{
+									"key": "X-Vercel-Cache",
+									"value": "MISS"
+								},
+								{
+									"key": "X-Vercel-Id",
+									"value": "sin1::iad1::52mwn-1685082323026-0befc07557e9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Data Peminjaman tidak ditemukan\"\n}"
+						}
+					]
 				}
 			]
 		}
@@ -407,7 +2046,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTY4MTQ3MDQ2MiwiZXhwIjoxNjgxNTU2ODYyfQ.q26Y5GVX5Lpr8l1AY-G6NazRybkjBg6Gx1Q6FO6uWms",
+				"value": "",
 				"type": "string"
 			}
 		]
@@ -435,11 +2074,16 @@
 	"variable": [
 		{
 			"key": "buku_id",
-			"value": "1"
+			"value": "14"
 		},
 		{
 			"key": "peminjaman_id",
-			"value": "1"
+			"value": "4"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://e-library.zaindev.my.id",
+			"type": "default"
 		}
 	]
 }
