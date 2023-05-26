@@ -27,7 +27,7 @@ export default authMiddleware(async function handle(req, res) {
 					buku_id: parseInt(buku_id),
 				},
 				data: {
-					isbn: isbn || null,
+					isbn: isbn || undefined,
 					judul_buku,
 					nama_penulis,
 					tahun_terbit: parseInt(tahun_terbit),
