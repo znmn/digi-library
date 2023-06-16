@@ -1,9 +1,11 @@
 import { parseCookies } from "../lib/helpers";
 import { verify } from "jsonwebtoken";
+import { decrypt } from "../lib/encrypt";
 
 export function unAuthPage(ctx) {
 	return new Promise((resolve) => {
-		const { token } = parseCookies(ctx.req.headers.cookie);
+		let { token } = parseCookies(ctx.req.headers.cookie);
+		token = token ? decrypt(token) : "";
 		try {
 			const decodedToken = verify(token, process.env.JWT_SECRET);
 			return ctx.res
@@ -22,7 +24,9 @@ export function authPage(ctx) {
 	if (url.includes("/login") || url.includes("/register")) return;
 
 	return new Promise((resolve) => {
-		const { token } = parseCookies(ctx.req.headers.cookie);
+		let { token } = parseCookies(ctx.req.headers.cookie);
+		// token = token ? extract(token) : "";
+		token = token ? decrypt(token) : "";
 		try {
 			const decodedToken = verify(token, process.env.JWT_SECRET);
 			return resolve({

@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { decrypt } from "../lib/encrypt";
 
 const JWT_SECRET = process.env.JWT_SECRET,
 	JWT_EXPIRY = process.env.JWT_EXPIRY;
@@ -7,7 +8,8 @@ export default function authMiddleware(handler) {
 	return async (req, res) => {
 		if (req.method == "GET") return handler(req, res);
 
-		const token = req.headers.authorization?.replace("Bearer ", "");
+		let token = req.headers.authorization?.replace("Bearer ", "");
+		token = token ? decrypt(token) : "";
 		if (!token) {
 			return res.status(401).json({ message: "Unauthorized" });
 		}
